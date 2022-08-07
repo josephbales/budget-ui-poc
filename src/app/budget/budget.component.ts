@@ -10,18 +10,19 @@ import { BudgetItem } from '../shared/models/budget-item';
   styleUrls: ['./budget.component.scss']
 })
 export class BudgetComponent implements OnInit {
-  id!: number;
-  budget: Budget | undefined;
+  budget!: Budget;
   budgetItems: BudgetItem[] = [];
   constructor(
-    private route: ActivatedRoute,
-    private dataService: DataService
+    private route: ActivatedRoute
   ) { }
-  // TODO: what if the budget doesn't exist?
+  
   ngOnInit(): void {
     this.route.data.subscribe(({ budgetData }) => {
       this.budget = budgetData[0];
       this.budgetItems = budgetData[1];
+      if (!this.budget) {
+        // TODO: what if the budget doesn't exist? Should I handle this in the router or resolver?
+      }
     })
   }
 }
