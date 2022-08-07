@@ -1,0 +1,4 @@
+<p>Budget for: {{budget?.month}}/{{budget?.year}}</p>
+<ul >
+  <li *ngFor="let item of budgetItems">{{ item.name }} --- {{ item.amount | currency }}</li>
+</ul>
