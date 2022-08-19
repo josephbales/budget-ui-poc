@@ -1,4 +1,10 @@
-<p>Budget for: {{budget.month}}/{{budget.year}}</p>
-<ul >
-  <li *ngFor="let item of budgetItems">{{ item.name }} --- {{ item.amount | currency }}</li>
-</ul>
+<div *ngIf="showError">
+  <p style="border: 1px solid red; background-color: white; color: red;">An error occurred</p>
+</div>
+<div *ngIf="!showError">
+  <p>Budget for: {{ budgetDate | date:'MMMM yyyy' }}</p>
+  <ul>
+    <li *ngFor="let item of budgetItems">{{ item.name }} --- {{ item.amount | currency }}</li>
+  </ul>
+</div>
+

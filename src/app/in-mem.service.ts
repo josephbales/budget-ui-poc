@@ -15,8 +15,8 @@ export class InMemService implements InMemoryDbService {
 
     const budgets: Budget[] = [
       { id: 1, month: 7, year: 2022 },
-      { id: 1, month: 8, year: 2022 },
-      { id: 1, month: 9, year: 2022 },
+      { id: 2, month: 8, year: 2022 },
+      { id: 3, month: 9, year: 2022 },
     ];
 
     const budgetItems: BudgetItem[] = [
